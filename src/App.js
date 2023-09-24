@@ -1,9 +1,11 @@
 import './App.css';
 import { useSelector, useDispatch } from 'react-redux'; // Corrected imports
+import { incNumber, decNumber } from './actions/index';
 
 function App() {
   const myState = useSelector((state) => state.changeTheNumber); // Corrected useSelector
   const dispatch = useDispatch(); // Corrected useDispatch
+
 
   return (
     <>
@@ -21,7 +23,8 @@ function App() {
             className='quantity__input'
             value={myState}
           />
-          <a className='quantity__plus' title='Increment'>
+          <a className='quantity__plus' title='Increment'
+            onClick={() => dispatch(incNumber())}>
             <span>+</span>
           </a>
         </div>
