@@ -1,4 +1,4 @@
-import './App.css';
+import './App.css'
 import { useSelector, useDispatch } from 'react-redux'; // Corrected imports
 import { incNumber, decNumber } from './actions/index';
 
