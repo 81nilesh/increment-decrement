@@ -3,23 +3,26 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createStore } from 'redux'; // Import createStore from Redux
+import store from './store'; // Import createStore from Redux
+import { Provider } from "react-redux";
 
 // Define a reducer function (you should replace this with your actual reducer)
-const rootReducer = (state, action) => {
-  // Your reducer logic here
-  return state;
-};
+// const rootReducer = (state, action) => {
+//   // Your reducer logic here
+//   return state;
+// };
 
 // Create the Redux store
-const store = createStore(rootReducer);
+// const store = createStore(rootReducer);
 
 store.subscribe(() => console.log(store.getState()));
 
 const root = document.getElementById('root'); // No need to use ReactDOM.createRoot here
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   root
 );
