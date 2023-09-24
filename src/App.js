@@ -15,7 +15,7 @@ function App() {
 
         <div className='quantity'>
           <a className='quantity__minus' title='Decrement'
-            onClick={() => dispatch(decNumber())}>
+            onClick={() => dispatch(decNumber(5))}>
             <span>-</span>
           </a>
           <input
